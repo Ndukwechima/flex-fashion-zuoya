@@ -21,7 +21,11 @@ const app = express();
 // Middlewares
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173", // for local development
+      "https://flex-fashion-zuoya-tlsq.vercel.app", // your deployed frontend
+    ],
+    credentials: true, // only needed if using cookies or auth headers
   })
 );
 app.use(express.json());
