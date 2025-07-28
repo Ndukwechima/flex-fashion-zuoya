@@ -19,30 +19,22 @@ const adminOrderRoutes = require("./routes/adminOrderRoutes");
 const app = express();
 
 // Middlewares
-// app.use(
-//   cors({
-//     origin: [
-//       "http://localhost:5173", // for local development
-//       "https://flex-fashion-zuoya-tlsq.vercel.app", // your deployed frontend
-//     ],
-//     credentials: true, // only needed if using cookies or auth headers
-//   })
-// );
 
 
 // Define allowed origins
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://flex-fashion-zuoya-tlsq.vercel.app", // your frontend on Vercel
+  "http://localhost:5174", // add this too since you tested with it
+  "https://flex-fashion-zuoya-tlsq.vercel.app",
 ];
 
-// Use CORS middleware
 app.use(
   cors({
     origin: function (origin, callback) {
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
+        console.log("Blocked by CORS:", origin); // helpful for debugging
         callback(new Error("Not allowed by CORS"));
       }
     },
