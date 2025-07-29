@@ -72,7 +72,7 @@ const NewArrivals = () => {
   }, [newArrivals]);
 
   return (
-    <section className="py-16 px-4 lg:px-0">
+    <section className="pb-16 sm:py-16 px-4 lg:px-0">
       <div className="container mx-auto text-center mb-10 relative">
         <h1 className="text-3xl font-bold mb-4">Explore New Arrivals</h1>
         <p className="text-lg text-gray-600 mb-8">
@@ -82,7 +82,7 @@ const NewArrivals = () => {
 
         {/* Scroll Button */}
         <div
-          className="absolute right-0 bottom-[-30px] flex space-x-0
+          className="absolute right-0 bottom-[-48px] flex space-x-0
         "
         >
           <button
@@ -116,18 +116,20 @@ const NewArrivals = () => {
         onMouseUp={handleMouseUpOrLeave}
         onMouseLeave={handleMouseUpOrLeave}
         ref={scrollRef}
-        className={`container relative mx-auto overflow-x-scroll flex space-x-6 ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+        className={`container relative mx-auto overflow-x-scroll flex space-x-6 ${
+          isDragging ? "cursor-grabbing" : "cursor-grab"
+        }`}
       >
         {newArrivals.map((product) => (
           <div
             key={product._id}
             className="relative min-w-[100%] 
-          sm:min-w-[50%] lg:min-w-[30%]"
+          sm:min-w-[50%] lg:min-w-[30%] pt-10 sm:pt-2"
           >
             <img
               src={product.images[0]?.url}
               alt={product.images[0]?.altText || product.name}
-              className="w-full h-[500px] object-center rounded-lg"
+              className="w-full h-[500px] object-cover rounded-lg"
               draggable="false"
             />
             <div

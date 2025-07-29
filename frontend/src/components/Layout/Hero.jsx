@@ -19,15 +19,15 @@ const Hero = () => {
             className="text-3xl md:text-8xl font-bold 
              tracking-tighter uppercase mb-4"
           >
-            Elegant <br /> & <br /> Casual
+            Elegant & <br /> Casuals
           </h1>
           <p className="text-white text-sm tracking-tighter md:text-lg mb-6">
             Explore our vacation-ready outfits with fast worldwide shipping
           </p>
           <Link
             to="#"
-            className="bg-white text-gray-950 
-             px-6 py-2 rounded-sm text-lg"
+            className="bg-white text-gray-950 hover:text-white 
+             px-6 py-2 rounded-sm text-lg animate-pulse  hover:bg-yellow-500 transition-all duration-300 ease-in-out"
           >
             Shop Now
           </Link>

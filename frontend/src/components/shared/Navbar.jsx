@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  HiOutlineUser,
-  HiOutlineShoppingBag,
   HiBars3BottomRight,
 } from "react-icons/hi2";
 import SearchBar from "./SearchBar";
 import CartDrawer from "../Layout/CartDrawer";
 import { IoMdClose } from "react-icons/io";
 import { useSelector } from "react-redux";
+import { IoCartOutline } from "react-icons/io5";
+import { GoPerson } from "react-icons/go";
+
+
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [navDrawerOpen, setNavDrawerOpen] = useState(false);
@@ -87,13 +89,13 @@ const Navbar = () => {
           )}
 
           <Link to="/profile" className="hover:text-black">
-            <HiOutlineUser className="h-6 w-6 text-gray-700" />
+            <GoPerson className="h-6 w-6 text-gray-700" />
           </Link>
           <button
             onClick={toggleCartDrawer}
             className="relative hover:text-black"
           >
-            <HiOutlineShoppingBag className="h-6 w-6 text-gray-700" />
+            <IoCartOutline className="h-6 w-6 text-gray-700" />
             {cartItemCount > 0 && (
               <span
                 className="absolute -top-1 -right-1 h-4 w-4 
